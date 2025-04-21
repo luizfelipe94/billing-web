@@ -1,50 +1,87 @@
 import { createGlobalStyle } from "styled-components";
 
 export default createGlobalStyle`
-  * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Open Sans', sans-serif;
-      font-weight: 400;
+/* Box sizing border-box por padrão */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
-      ::-webkit-scrollbar-track {
-          background-color: transparent;
-      }
+/* Remove margens e padding padrão */
+body,
+h1, h2, h3, h4, h5, h6,
+p, figure, blockquote,
+dl, dd {
+  margin: 0;
+  padding: 0;
+}
 
-      ::-webkit-scrollbar {
-          width: 0.5vh;
-          height: 0.5vh;
-          background: transparent;
-      }
+/* Remove estilos padrão de listas */
+ul[role='list'],
+ol[role='list'],
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 
-      ::-webkit-scrollbar-thumb {
-          background: #CCCCCC;
-          border-radius: 0.5rem;
-          border: 0rem solid #A1A;
-          box-shadow: none;
-      }
-  }
+/* Remove estilos padrão de links */
+a {
+  text-decoration: none;
+  color: inherit;
+}
 
-  html, body, #root {
-      background-color: white;
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-      width: 100%;
-      min-height: 100vh;
-      position: relative;
-  }
+/* Melhor consistência de tipografia */
+html {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+}
 
-  body {
-      -webkit-font-smoothing: antialiased !important;
-      -moz-osx-font-smoothing: grayscale !important;
-  }
+/* Elementos mídia responsivos */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
 
-  button {
-      cursor: pointer;
-      border: 0;
-      box-shadow: 0px;
-      background-color: transparent;
-  }
+/* Remove bordas de formulários padrão */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+/* Corpo básico */
+body {
+  min-height: 100vh;
+  font-family: system-ui, sans-serif;
+  background-color: #fff;
+  color: #111;
+}
+
+/* Botões */
+button {
+  cursor: pointer;
+  background: transparent;
+  border: none;
+}
+
+/* Tabelas */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
 `;
