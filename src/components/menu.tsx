@@ -1,7 +1,8 @@
 import { Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { FaHome } from "react-icons/fa";
-import styled from 'styled-components'
+import styled from "styled-components";
+import { IoMdPricetag } from "react-icons/io";
 
 const StyledItem = styled(Nav.Link)`
   display: flex;
@@ -34,9 +35,7 @@ interface MenuItemProps {
 const MenuItem: React.FC<MenuItemProps> = ({ icon, text, link }) => (
   <StyledItem as={Link} to={link}>
     {icon}
-    <div style={{ marginLeft: "10px" }}>
-      <Link to={link}>{text}</Link>
-    </div>
+    <div style={{ marginLeft: "10px" }}>{text}</div>
   </StyledItem>
 );
 
@@ -46,7 +45,7 @@ export default function Menu() {
       <StyledTitle>IBilling</StyledTitle>
       <Nav className="flex-column">
         <MenuItem icon={<FaHome />} text="Dashboard" link="/dashboard" />
-        <MenuItem icon={<FaHome />} text="Preços" link="/prices" />
+        <MenuItem icon={<IoMdPricetag />} text="Preços" link="/prices" />
       </Nav>
     </div>
   );

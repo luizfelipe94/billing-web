@@ -2,6 +2,7 @@ import { Link, Outlet, Route, Routes, useLocation } from "react-router-dom";
 import Menu from "./components/menu";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Breadcrumb } from "react-bootstrap";
+import Prices from "./pages/prices/prices";
 
 const queryClient = new QueryClient();
 
@@ -62,7 +63,7 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<h1>Dashboard</h1>} />
           <Route path="/dashboard" element={<h1>Dashboard</h1>} />
-          <Route path="/prices" element={<h1>Preços</h1>} />
+          <Route path="/prices" element={<Prices />} />
         </Route>
       </Route>
     </Routes>

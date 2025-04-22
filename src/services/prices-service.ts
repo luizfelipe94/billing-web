@@ -1,16 +1,16 @@
 import api from "./api";
 
 export type Price = {
-    id: number;
-    product: string;
-    price: number;
-    measure: string;
-    size: string;
-    createdAt: string;
-    updatedAt: string;
+  id: number;
+  product: string;
+  price: number;
+  measure: string;
+  size: string;
+  createdAt: string;
+  updatedAt: string;
 };
 
-export const listPrices = async (): Promise<Partial<Price>[]> => {
+export const listPrices = async (): Promise<Price[]> => {
   try {
     const response = await api.get("/prices");
     return response.data;
