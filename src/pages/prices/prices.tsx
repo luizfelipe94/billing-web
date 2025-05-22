@@ -32,10 +32,10 @@ export const Prices = () => {
             <Table striped bordered hover>
               <thead>
                 <tr>
-                  <th>Nome</th>
-                  <th>Valor</th>
-                  <th>Descrição</th>
-                  <th>Valor</th>
+                  <th>Produto</th>
+                  <th>Medida</th>
+                  <th>Tamanho</th>
+                  <th>Preço</th>
                 </tr>
               </thead>
               <tbody>

@@ -19,3 +19,13 @@ export const listPrices = async (): Promise<Price[]> => {
     throw error;
   }
 };
+
+export const createPrice = async (price: Partial<Price>): Promise<Price> => {
+  try {
+    const response = await api.post("/prices", price);
+    return response.data;
+  } catch (error) {
+    console.error("Error creating price:", error);
+    throw error;
+  }
+}
