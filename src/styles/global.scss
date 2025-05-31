@@ -1,6 +1,3 @@
-import { createGlobalStyle } from "styled-components";
-
-export default createGlobalStyle`
 /* Box sizing border-box por padrão */
 *,
 *::before,
@@ -84,4 +81,3 @@ table {
   border-collapse: collapse;
   width: 100%;
 }
-`;

@@ -10,6 +10,10 @@ export type Price = {
   updatedAt: string;
 };
 
+export type TurnOnEvents = {
+  count: number;
+}
+
 export const listPrices = async (): Promise<Price[]> => {
   try {
     const response = await api.get("/prices");
@@ -26,6 +30,16 @@ export const createPrice = async (price: Partial<Price>): Promise<Price> => {
     return response.data;
   } catch (error) {
     console.error("Error creating price:", error);
+    throw error;
+  }
+}
+
+export const turnOnEvents = async (data: TurnOnEvents): Promise<void> => {
+  try {
+    const response = await api.post("/turn-on-generate-data", data);
+    return response.data;
+  } catch (error) {
+    console.error("Error activating events:", error);
     throw error;
   }
 }
